@@ -1,12 +1,12 @@
 
-[![Arduino CI](https://github.com/RobTillaart/PCA9698/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
-[![Arduino-lint](https://github.com/RobTillaart/PCA9698/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/PCA9698/actions/workflows/arduino-lint.yml)
-[![JSON check](https://github.com/RobTillaart/PCA9698/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/PCA9698/actions/workflows/jsoncheck.yml)
-[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/PCA9698.svg)](https://github.com/RobTillaart/PCA9698/issues)
+[![Arduino CI](https://github.com/RobTillaart/PCA9698_RT/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino-lint](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/arduino-lint.yml)
+[![JSON check](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/jsoncheck.yml)
+[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/PCA9698_RT.svg)](https://github.com/RobTillaart/PCA9698_RT/issues)
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/PCA9698/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/RobTillaart/PCA9698.svg?maxAge=3600)](https://github.com/RobTillaart/PCA9698/releases)
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/PCA9698.svg)](https://registry.platformio.org/libraries/robtillaart/PCA9698)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/PCA9698_RT/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/RobTillaart/PCA9698_RT.svg?maxAge=3600)](https://github.com/RobTillaart/PCA9698_RT/releases)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/PCA9698.svg)](https://registry.platformio.org/libraries/RobTillaart/PCA9698_RT)
 
 
 # PCA9698
@@ -31,7 +31,9 @@ Be sure to have an adequate power supply.
 The device has a RESET pin, OE (OutputEnable) pin and an INT(errupt) pin.
 The library does not provide means to control these lines.
 
-Not all functionality is completed yet.
+Note: Not all functionality is implemented yet.
+
+Note: The library is not tested with hardware yet.
 
 As always, feedback is welcome.
 
@@ -52,14 +54,14 @@ This can be used to prevent active polling of the PCA9698, which is more efficie
 - https://github.com/RobTillaart/MCP23008  8 bit
 - https://github.com/RobTillaart/MCP23S08  8 bit
 - https://github.com/RobTillaart/PCF8574  8 bit
-- https://github.com/RobTillaart/PCA9698_RT
+- https://github.com/RobTillaart/PCA9698_RT 40 bit
 
 
 ## I2C
 
 ### Clock
 
-Support to 1000 kHz.
+Supports clock speeds up to 1000 kHz.
 
 
 ### Address
@@ -110,16 +112,18 @@ default 0x20, and the optional Wire interface as parameter.
 
 ### Read and Write 8
 
-bank = 0..5
+Parameter bank = 0..5  
+Functions return error code or PCA9698_OK (0) on success.
 
-- **uint8_t read8(uint8_t bank, uint8_t & bitmask)** reads 8 pins at once.
+- **uint8_t read8(uint8_t bank, uint8_t & bitmask)** reads 8 pins at once into bitmask.
 - **uint8_t write8(uint8_t bank, uint8_t bitmask)** write 8 pins at once.
 - **uint8_t toggle8(uint8_t bank, uint8_t bitmask)** toggles 8 pins at once.
 
 
 ### Read and Write 1
 
-pin = 0..39
+Parameter pin = 0..39  
+Functions return error code or PCA9698_OK (0) on success.
 
 - **uint8_t read1(uint8_t pin)** reads 1 pin.
 - **uint8_t write1(uint8_t pin, uint8_t value)** writes 1 pin, 0 = LOW, other = HIGH
@@ -130,6 +134,7 @@ pin = 0..39
 
 Use **uint8_t buf[5]** to read/write all banks in one call.
 The buffer should be at least size 5. The library does not check this.
+Functions return error code or PCA9698_OK (0) on success.
 
 - **uint8_t read40(uint8_t \* buf)** reads 40 pins.
 - **uint8_t write40(uint8_t \* buf)** writes 40 pins.
@@ -231,6 +236,8 @@ See datasheet 7.4.6 - 7.4.8
 - make the "40" interface size aware so it can access 1,2,3,4,5 banks by parameter
   - begin(MAX_PIN); ==> derived is MAX_BANK = 1 + (MAXPIN - 1) / 8
   - would give configuration that uses less pins faster IO.
+- add return value/error select() and selectN();
+- should all bank get-function use references and error codes too.
 
 #### Wont
 
