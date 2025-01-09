@@ -31,7 +31,9 @@ Be sure to have an adequate power supply.
 The device has a RESET pin, OE (OutputEnable) pin and an INT(errupt) pin.
 The library does not provide means to control these lines.
 
-Not all functionality is completed yet.
+Note: Not all functionality is implemented yet.
+
+Note: The library is not tested with hardware yet.
 
 As always, feedback is welcome.
 
