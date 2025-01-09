@@ -1,12 +1,12 @@
 
-[![Arduino CI](https://github.com/RobTillaart/PCA9698/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
-[![Arduino-lint](https://github.com/RobTillaart/PCA9698/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/PCA9698/actions/workflows/arduino-lint.yml)
-[![JSON check](https://github.com/RobTillaart/PCA9698/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/PCA9698/actions/workflows/jsoncheck.yml)
-[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/PCA9698.svg)](https://github.com/RobTillaart/PCA9698/issues)
+[![Arduino CI](https://github.com/RobTillaart/PCA9698_RT/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino-lint](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/arduino-lint.yml)
+[![JSON check](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/PCA9698_RT/actions/workflows/jsoncheck.yml)
+[![GitHub issues](https://img.shields.io/github/issues/RobTillaart/PCA9698_RT.svg)](https://github.com/RobTillaart/PCA9698_RT/issues)
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/PCA9698/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/RobTillaart/PCA9698.svg?maxAge=3600)](https://github.com/RobTillaart/PCA9698/releases)
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/PCA9698.svg)](https://registry.platformio.org/libraries/robtillaart/PCA9698)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/PCA9698_RT/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/RobTillaart/PCA9698_RT.svg?maxAge=3600)](https://github.com/RobTillaart/PCA9698_RT/releases)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/robtillaart/library/PCA9698.svg)](https://registry.platformio.org/libraries/RobTillaart/PCA9698_RT)
 
 
 # PCA9698
