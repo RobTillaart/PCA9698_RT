@@ -53,10 +53,10 @@ unittest_teardown()
 
 unittest(test_constants)
 {
-  assertEqual(0x00, PCA.PCA9698_OK        );
-  assertEqual(0x81, PCA.PCA9698_PIN_ERROR );
-  assertEqual(0x82, PCA.PCA9698_I2C_ERROR );
-  assertEqual(0x83, PCA.PCA9698_BANK_ERROR);
+  assertEqual(0x00, PCA9698_OK        );
+  assertEqual(0x81, PCA9698_PIN_ERROR );
+  assertEqual(0x82, PCA9698_I2C_ERROR );
+  assertEqual(0x83, PCA9698_BANK_ERROR);
 }
 
 
